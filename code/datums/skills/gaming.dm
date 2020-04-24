@@ -7,7 +7,7 @@
 	skillcapepath = /obj/item/clothing/neck/cloak/skill_reward/gaming
 
 /datum/skill/gaming/New()
-	..()
+	. = ..()
 	levelUpMessages[1] = "<span class='nicegreen'>I'm starting to get a hang of the controls of these games...</span>"
 	levelUpMessages[4] = "<span class='nicegreen'>I'm starting to pick up the meta of these arcade games. If I were to minmax the optimal strat and accentuate my playstyle around well-refined tech...</span>"
 	levelUpMessages[6] = "<span class='nicegreen'>Through incredible determination and effort, I've reached the peak of my [name] abiltities. I wonder how I can become any more powerful... maybe gamerfuel would actually would help me play better..?</span>"

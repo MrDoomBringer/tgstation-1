@@ -15,7 +15,7 @@
   *Can't happen in the datum's definition because these lists are not constant expressions
   */
 /datum/skill/New()
-	..()
+	. = ..()
 	levelUpMessages = list("<span class='nicegreen'>I'm starting to figure out what [name] really is!</span>",
 	"<span class='nicegreen'>I'm getting a little better at [name]!</span>",
 	"<span class='nicegreen'>I'm getting much better at [name]!</span>",
