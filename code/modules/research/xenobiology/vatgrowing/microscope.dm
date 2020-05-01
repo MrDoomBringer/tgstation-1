@@ -17,7 +17,7 @@
 /obj/structure/microscope/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = 0, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "microscope", name, 400, 800, master_ui, state)
+		ui = new(user, src, ui_key, "Microscope", name, 400, 800, master_ui, state)
 		ui.open()
 
 /obj/structure/microscope/ui_data(mob/user)
@@ -43,14 +43,14 @@
 			organism_information["requireds"] = get_reagent_list(cell_line.required_reagents)
 			organism_information["supplementaries"] = get_reagent_list(cell_line.supplementary_reagents)
 			organism_information["suppressives"] = get_reagent_list(cell_line.suppressive_reagents)
-			data["cell_lines"] += organism_information
+			data["cell_lines"] += list(organism_information)
 
 		if(istype(organism, /datum/micro_organism/virus))
 			var/datum/micro_organism/virus/virus = organism
 			organism_information["type"] = "virus"
 			organism_information["name"] = virus.name
 			organism_information["desc"] = virus.desc
-			data["viruses"] += organism_information
+			data["viruses"] += list(organism_information)
 
 	return data
 

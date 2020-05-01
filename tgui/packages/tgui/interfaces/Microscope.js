@@ -4,7 +4,7 @@ import { Window } from '../layouts';
 
 export const Microscope = (props, context) => {
   const { act, data } = useBackend(context);
-  const organisms = data.oranisms || [];
+  const organisms = data.cell_lines || [];
   const viruses = data.viruses || [];
   return (
     <Window resizable>
@@ -30,15 +30,8 @@ export const Microscope = (props, context) => {
           <h2>Viruses</h2>
           <LabeledList>
             {viruses.map(virus => (
-              <LabeledList.Item key={organism.name} label={organism.name}>
-                Description: {organism.desc}
-                <br />
-                Required Reagents: [<b>{organism.requireds}</b>]
-                <br />
-                Supplementary Reagents: [<b>{organism.supplementaries}</b>]
-                <br />
-                Suppressive Reagents: [<b>{organism.suppressives}</b>]
-                <br />
+              <LabeledList.Item key={virus.name} label={virus.name}>
+                Description: {virus.desc}
               </LabeledList.Item>
             ))}
           </LabeledList>
